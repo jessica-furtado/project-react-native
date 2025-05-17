@@ -1,13 +1,16 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-const DetailsScreen = () => {
+const DetailsScreen = ({ route }) => {
+
+  const { itemId, name, description } = route.params
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>📄 Detalhes do Curso</Text>
-      <text style={styles.itemTitle}>Curso de AWS</text>
-      <text style={styles.itemDescription}>...</text>
-      <text style={styles.itemId}>ID:...</text>
+      <text style={styles.itemTitle}>{name}</text>
+      <text style={styles.itemDescription}>{description}</text>
+      <text style={styles.itemId}>ID: {itemId}</text>
     </View>
   )
 }
