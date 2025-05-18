@@ -8,9 +8,9 @@ const DetailsScreen = ({ route }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>📄 Detalhes do Curso</Text>
-      <text style={styles.itemTitle}>{name}</text>
-      <text style={styles.itemDescription}>{description}</text>
-      <text style={styles.itemId}>ID: {itemId}</text>
+      <Text style={styles.itemTitle}>{name}</Text>
+      <Text style={styles.itemDescription}>{description}</Text>
+      <Text style={styles.itemId}>ID: {itemId}</Text>
     </View>
   )
 }

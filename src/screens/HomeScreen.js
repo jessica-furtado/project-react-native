@@ -1,7 +1,7 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 
-const HomeScreen = ({ navigaton }) => {
+const HomeScreen = ({ navigation }) => {
 
     const items = [
         { id: '1', name: "Curso de React Native", description: "Aprenda a criar apps para IOS e Android" },
@@ -11,7 +11,7 @@ const HomeScreen = ({ navigaton }) => {
     ]
     
   return (
-    <View style={style.container}>
+    <View style={styles.container}>
       <Text style={styles.title}>📚 Cursos Disponíveis</Text>
       <FlatList
         data={items}
@@ -19,14 +19,14 @@ const HomeScreen = ({ navigaton }) => {
         renderItem={({ item }) => (
             <TouchableOpacity
                 style={styles.itemContainer}
-                onPress={() => navigaton.navigate('Details', {
+                onPress={() => navigation.navigate('Details', {
                   itemId: item.id,
                   name: item.name,
                   description: item.description
                 })}
             >
-                <text style={styles.itemTitle}>{item.name}</text>
-                <text style={styles.itemDescription}>{item.description}</text>
+                <Text style={styles.itemTitle}>{item.name}</Text>
+                <Text style={styles.itemDescription}>{item.description}</Text>
 
             </TouchableOpacity>
         )

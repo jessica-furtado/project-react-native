@@ -4,9 +4,9 @@ import React from 'react'
 const ProfileScreen = ( {navigation} ) => {
   return (
     <View style= {{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>👤 Meu Perfil</text>
+        <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>👤 Meu Perfil</Text>
         <Text>Nome: Jéssica Furtado</Text>
-        <text>Email: jessica.furtado@gmail.com </text>
+        <Text>Email: jessica.furtado@gmail.com </Text>
         <Button title="Sair" onPress={() => navigation.replace('Login')} />
     </View>
   )
