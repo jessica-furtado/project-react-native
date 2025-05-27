@@ -6,6 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import LoginScreen from "../screens/LoginScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import CursoFormScreen from "../screens/CursoFormScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,6 +50,12 @@ const AppNavigation = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen name="Details" component={DetailsScreen} />
+
+      <Stack.Screen
+        name="CursoForm"
+        component={CursoFormScreen}
+      />
+
     </Stack.Navigator>
   );
 };
