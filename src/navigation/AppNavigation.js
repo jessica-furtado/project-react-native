@@ -7,6 +7,7 @@ import LoginScreen from "../screens/LoginScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import CursoFormScreen from "../screens/CursoFormScreen";
+import RegisterScreen from "../screens/RegisterScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -54,6 +55,11 @@ const AppNavigation = () => {
       <Stack.Screen
         name="CursoForm"
         component={CursoFormScreen}
+      />
+
+<Stack.Screen
+        name="Register"
+        component={RegisterScreen}
       />
 
     </Stack.Navigator>

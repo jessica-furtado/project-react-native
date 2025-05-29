@@ -29,6 +29,10 @@ const LoginScreen = ({ navigation }) => {
 
         <Button title="Entrar" onPress={() => navigation.replace('Main')} />
 
+        <Text style={styles.orText}> Ainda não tem conta? </Text>
+        <Button title='Cadastre-se' onPress={() => navigation.navigate('Register')} />
+
+
         <Text style={styles.orText}> Ou entre com</Text>
 
         {/* Botão do Google */}
