@@ -1,14 +1,16 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert, Button } from 'react-native'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useContext } from 'react'
 import{ useFocusEffect } from '@react-navigation/native'
 import { deletarCurso, getCursos } from '../services/CursoService'
+import { AuthContext } from '../context/AuthContext'
 
 const HomeScreen = ({ navigation }) => {
-
+ 
   const [items, setItems] = useState([])
+  const { user } = useContext(AuthContext)
 
   const carregarCursos = async () => {
-    const cursos = await getCursos()
+    const cursos = await getCursos(user.uid)
     setItems(cursos)
   }
 
@@ -58,7 +60,18 @@ const HomeScreen = ({ navigation }) => {
             >
                 <Text style={styles.itemTitle}>{item.name}</Text>
                 <Text style={styles.itemDescription}>{item.description}</Text>
-                <Button title="🗑️" onPress={() => confirmarExclusao(item.id)} color="#d9534f" />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
+                  <Button
+                  title="✏️"
+                  onPress={() => navigation.navigate('CursoForm', { itemId: item.id })}
+                  color="#0275d8"
+                />
+                  <Button
+                  title="🗑️"
+                  onPress={() => confirmarExclusao(item.id)}
+                  color="#d9534f"
+                />
+              </View>
 
             </TouchableOpacity>
         )
